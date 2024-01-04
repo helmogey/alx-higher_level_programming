@@ -7,4 +7,4 @@ if __name__ == "__main__":
     if len(args) > 0:
         for ar in args:
             res += int(ar)
-    print(res)
+    print("{}".format(res))
