@@ -3,8 +3,8 @@
 if __name__ == "__main__":
     import sys
     args = sys.argv[1 : ]
+    res = 0
     if len(args) > 0:
-        res = 0
         for ar in args:
             res += int(ar)
-        print(res)
+    print(res)
