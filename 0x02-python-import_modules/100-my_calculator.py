@@ -16,10 +16,10 @@ if __name__ == "__main__":
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
         if op == "+":
-            print(add(a, b))
+            print("{} {} = {}".format(a, op, b, add(a, b)))
         elif op == "-":
-            print(sub(a, b))
+            print("{} {} = {}".format(a, op, b, sub(a, b)))
         elif op == "*":
-            print(mul(a, b))
+            print("{} {} = {}".format(a, op, b, mul(a, b)))
         elif op == "/":
-            print(div(a, b))
+            print("{} {} = {}".format(a, op, b, div(a, b)))
