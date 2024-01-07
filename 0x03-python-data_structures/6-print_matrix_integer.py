@@ -6,5 +6,6 @@ def print_matrix_integer(matrix=[[]]):
                 print("{:d}".format(ele), end=" ")
             elif i == len(lst) - 1:
                 print("{:d}".format(ele), end="")
-
+            else:
+                print("")
         print("$")
