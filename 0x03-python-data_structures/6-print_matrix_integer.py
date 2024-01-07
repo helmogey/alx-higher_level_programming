@@ -5,7 +5,6 @@ def print_matrix_integer(matrix=[[]]):
             if i < len(lst)- 1:
                 print("{:d}".format(ele), end=" ")
             elif i == len(lst) - 1:
-                print("{:d}$".format(ele), end="")
-            else:
-                print("")
-        print()
+                print("{:d}".format(ele), end="")
+
+        print("$")
