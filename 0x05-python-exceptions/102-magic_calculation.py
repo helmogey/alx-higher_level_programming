@@ -1,22 +1,13 @@
 #!/usr/bin/python3
 def magic_calculation(a, b):
-    """
-    This function calculates a^i / b for i in range(1, 3).
-
-    Args:
-        a: A positive integer.
-        b: A positive integer.
-
-    Returns:
-        The sum of a^i / b for i in range(1, 3).
-    """
-    result = 0
-    try:
-        for i in range(1, 3):
-            if i > a:
-                raise Exception('Too far')
-            result += a ** i / b
-    except Exception as e:
-        print(e)
-    result += b + a
-    return result
+    result = 0 # initialize result to 0
+    for i in range(1, 3): # loop over the range from 1 to 3
+        try:
+            if i > a: # if i is greater than a
+                raise Exception('Too far') # raise an exception with the message 'Too far'
+            else:
+                result += a ** b / i # add a to the power of b divided by i to the result
+        except: # in case of an exception
+            result += a + b # add a and b to the result
+            break # break the loop
+    return result # return the result
