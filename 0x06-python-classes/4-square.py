@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-
 """Define a class Square."""
 
 
 class Square:
     """ Square """
+
+
     def __init__(self, size=0):
         """ size: private argument"""
         self.__size = size
@@ -23,4 +24,6 @@ class Square:
 
     def area(self):
         """square"""
+
+
         return self.__size * self.__size
