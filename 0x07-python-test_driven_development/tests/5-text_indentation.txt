@@ -1,0 +1,18 @@
+
+Using ``text_indentation``
+-------------------
+
+Write a function that prints square of #
+
+    Prototype: def text_indentation(text):
+
+# Doctests:
+
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+>>> text_indentation(42)  # Test for non-string input
+Traceback (most recent call last):
+  ...
+TypeError: text must be a string
