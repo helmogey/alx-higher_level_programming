@@ -63,16 +63,16 @@ class Rectangle:
 
         shape = []
         for i in range(self.__height):
-            [shape.append(self.print_symbol) for j in range(self.__width)]
+            [shape.append(str(self.print_symbol)) for j in range(self.__width)]
             if i != self.__height - 1:
                 shape.append("\n")
         return ("".join(shape))
 
     def __repr__(self):
         """Return string Rectangle."""
-        rect = "Rectangle(" + str(self.__width)
-        rect += ", " + str(self.__height) + ")"
-        return (rect)
+        shape = "Rectangle(" + str(self.__width)
+        shape += ", " + str(self.__height) + ")"
+        return (shape)
 
     def __del__(self):
         """Print a delete message"""
