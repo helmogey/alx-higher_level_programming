@@ -9,4 +9,3 @@ def text_indentation(text):
             print()
         else:
             print(word, end=" ")
-text_indentation("Holberton School")
