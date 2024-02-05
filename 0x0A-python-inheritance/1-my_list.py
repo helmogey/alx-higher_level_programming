@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+"""contains the MyList class"""
+
+
 class MyList(list):
   """
   A custom list class that inherits from the built-in list class and adds a method to print the list sorted.
   """
+
+  def __init__(self):
+      """initializes the object"""
+      super().__init__()
 
   def print_sorted(self):
     """
