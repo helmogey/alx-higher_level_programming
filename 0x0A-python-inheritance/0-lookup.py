@@ -11,11 +11,10 @@ def lookup(obj):
       """
     attributes = []
     methods = []
-
     # Get all attributes and methods of the object
     for name in dir(obj):
         # Filter out private and special methods
-        if not name.startswith("__"):
+        if name.startswith("__"):
             # Check if it's an attribute or method
             if hasattr(obj, name):
                 attributes.append(name)
