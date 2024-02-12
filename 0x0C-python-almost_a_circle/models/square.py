@@ -60,6 +60,11 @@ class Square(Rectangle):
                     self.y = value
 
 
+
+    def to_dictionary(self):
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
+
+
     def __str__(self):
         """overriding the __str__ method"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,self.width)
