@@ -15,7 +15,7 @@ class Rectangle(Base):
             x (int): The x coordinate of the new Rectangle.
             y (int): The y coordinate of the new Rectangle.
             id (int): The identity of the new Rectangle.
-            
+
         Raises:
             TypeError: If either of width or height is not an int.
             ValueError: If either of width or height <= 0.
@@ -33,11 +33,13 @@ class Rectangle(Base):
     @property
     def width(self):
         """Set/get width of the Rectangle."""
+
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Width"""
+        """Width fucntion"""
+
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -47,11 +49,14 @@ class Rectangle(Base):
     @property
     def height(self):
         """Set/get height of the Rectangle."""
+
         return self.__height
 
     @height.setter
     def height(self, value):
-        """height"""
+        """height fucntion"""
+
+
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -65,7 +70,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """set X"""
+        """set X fucntion"""
         if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -74,7 +79,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Set Y"""
+        """Set Y fucntion"""
         """Set/get y coordinate of the Rectangle."""
         return self.__y
 
@@ -155,5 +160,5 @@ class Rectangle(Base):
                     self.y = value
 
     def to_dictionary(self):
-        """dict"""
+        """dict fucntion"""
         return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
