@@ -15,6 +15,8 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initialize a new Base."""
+
         if id:
             self.id = id
         else:
@@ -22,12 +24,14 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
+        """JSON function"""
         if list_dictionaries == None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """Save function"""
         filename = cls.__name__ + ".json"
         with open(filename, "w") as jsonfile:
             if list_objs is None:
@@ -38,6 +42,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """JSOn sting function"""
 
         if json_string is None or json_string == "[]":
             return []
@@ -45,6 +50,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """create function"""
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
@@ -55,6 +61,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+
+        """load function"""
 
         filename = str(cls.__name__) + ".json"
         with open(filename, "r") as jsonfile:
