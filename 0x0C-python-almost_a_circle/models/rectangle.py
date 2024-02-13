@@ -142,4 +142,3 @@ class Rectangle(Base):
     def to_dictionary(self):
         """dict"""
         return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
-    
