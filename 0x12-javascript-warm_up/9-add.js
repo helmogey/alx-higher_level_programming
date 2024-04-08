@@ -4,7 +4,7 @@ const args = process.argv.slice(2);
 if (args.length < 2) {
   console.log('Missing arguments! Please provide two numbers.');
 } else {
-  function add(a, b) {
+  function add (a, b) {
     const num1 = parseInt(a);
     const num2 = parseInt(b);
     if (isNaN(num1) || isNaN(num2)) {
