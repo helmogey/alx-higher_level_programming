@@ -13,4 +13,3 @@ function add (a, b) {
 
 const result = add(args[0], args[1]);
 console.log(result);
-
