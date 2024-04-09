@@ -6,7 +6,7 @@ class Rectangle {
       this.height = h;
     }
   }
-  
+
   print () {
     let output = '';
     for (let i = 0; i < this.height; i++) {
@@ -15,7 +15,7 @@ class Rectangle {
       }
       output += '\n';
     }
-    console.log(output);
+    process.stdout.write(output);
   }
 }
 module.exports = Rectangle;
