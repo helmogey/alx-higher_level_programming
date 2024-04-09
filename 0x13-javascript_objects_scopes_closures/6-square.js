@@ -7,8 +7,8 @@ class Square extends Squareold {
 
   charPrint (c = 'X') {
     let output = '';
-    for (let i = 0; i < this.height; i++) {
-      for (let j = 0; j < this.width; j++) {
+    for (let i = 0; i < this.size; i++) {
+      for (let j = 0; j < this.size; j++) {
         output += c;
       }
       output += '\n';
