@@ -13,7 +13,6 @@ fs.readFile(sourceFile1, 'utf8', (err1, data1) => {
   fs.readFile(sourceFile2, 'utf8', (err2, data2) => {
     combinedContent += data2;
 
-    fs.writeFile(destinationFile, combinedContent, 'utf8', (err3) => {
-    });
+    fs.writeFileSync(destinationFile, combinedContent);
   });
 });
