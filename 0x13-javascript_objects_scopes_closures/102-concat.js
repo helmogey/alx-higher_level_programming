@@ -5,7 +5,6 @@ const sourceFile1 = process.argv[2];
 const sourceFile2 = process.argv[3];
 const destinationFile = process.argv[4];
 
-
 let combinedContent = '';
 
 fs.readFile(sourceFile1, 'utf8', (err1, data1) => {
