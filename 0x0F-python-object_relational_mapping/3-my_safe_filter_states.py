@@ -15,22 +15,26 @@ def list_states(username, password, database, search_name):
       database: Name of the database to connect to.
   """
 
-  # Connect to the MySQL server
-  connection = MySQLdb.connect(host="localhost", user=username, passwd=password, db=database)
-  cursor = connection.cursor()
+  try:
+    # Connect to the MySQL server
+    connection = MySQLdb.connect(host="localhost", user=username, passwd=password, db=database)
+    cursor = connection.cursor()
 
-  # Execute query to select all states ordered by id
-  query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-  cursor.execute(query, (search_name,))
+    # Execute query to select all states ordered by id
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    cursor.execute(query, (search_name,))
 
 
-  # Fetch results and print them
-  for row in cursor.fetchall():
-    print(row)
+    # Fetch results and print them
+    for row in cursor.fetchall():
+      print(row)
 
-  # Close connection
-  cursor.close()
-  connection.close()
+    # Close connection
+    cursor.close()
+    connection.close()
+
+  except MySQLdb.Error as err:
+    print(f"Error connecting to database: {err}")
 
 # Script execution should not happen when imported
 if __name__ == "__main__":
