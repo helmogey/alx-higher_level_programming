@@ -21,8 +21,8 @@ def list_states(username, password, database, search_name):
     cursor = connection.cursor()
 
     # Execute query to select all states ordered by id
-    query = "SELECT * FROM states WHERE name = " + str(search_name)
-    cursor.execute(query)
+    # query = "SELECT * FROM states WHERE name = " + str(search_name)
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'".format(sys.argv[4]))
 
 
     # Fetch results and print them
