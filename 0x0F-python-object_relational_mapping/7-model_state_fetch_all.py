@@ -24,19 +24,12 @@ def list_all_states(username, password, database):
   SessionLocal = sessionmaker(bind=engine)
   session = SessionLocal()
 
-  try:
-    # Query all State objects ordered by id
-    states = session.query(State).order_by(State.id)
+  states = session.query(State).order_by(State.id)
 
-    # Print state information
-    for state in states:
+  # Print state information
+  for state in states:
       print(state.id, state.name, sep=": ")
 
-  except Exception as err:
-    pass
-  finally:
-    # Close the session
-    session.close()
 
 if __name__ == "__main__":
   # Create argument parser
