@@ -16,7 +16,8 @@ if __name__ == "__main__":
   database = sys.argv[3]
   # Parse arguments
 
-  engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database))
+  engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                         .format(username, password, database))
   # Call list_all_states function
   Base.metadata.create_all(engine)
 
