@@ -25,7 +25,7 @@ def list_all_states(username, password, database):
 
   try:
     # Query all State objects ordered by id
-    states = session.query(State).order_by(State.id).all()
+    states = session.query(State).order_by(State.id)
 
     # Print state information
     for state in states:
