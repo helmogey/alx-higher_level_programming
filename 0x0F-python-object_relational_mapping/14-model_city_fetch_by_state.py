@@ -33,6 +33,8 @@ def fetch_cities_by_state(username, password, database):
             # Get the state name from the relationship
             state_name = city.state.name
             print(f"{state_name}: ({city.id}) {city.name}")
+    except:
+        pass
 
 
 if __name__ == "__main__":
