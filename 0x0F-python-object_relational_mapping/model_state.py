@@ -13,7 +13,7 @@ Base = declarative_base()
 class State(Base):
   __tablename__ = 'states'  # Table name for the model
 
-  id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+  id = Column(Integer, primary_key=True, autoincrement=True, nullable=False, unique=True)
   name = Column(String(128), nullable=False)
 
 
