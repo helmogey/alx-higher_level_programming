@@ -29,7 +29,7 @@ def list_all_states(username, password, database):
 
     # Print state information
     for state in states:
-      print(state)
+      print(state.id, state.name, sep=": ")
 
   except Exception as err:
     pass
