@@ -4,7 +4,7 @@
 import MySQLdb
 import sys
 
-def list_states(username, password, database, search_name):
+def list_states(username, password, database, state_name):
   """
   Connects to a MySQL database and lists all states from the 'states' table,
   sorting them by id in ascending order.
@@ -21,8 +21,8 @@ def list_states(username, password, database, search_name):
     cursor = connection.cursor()
 
     # Execute query to select all states ordered by id
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (search_name,))
+    query = "SELECT cities.name FROM cities INNER JOIN states ON states.id=cities.state_id WHERE states.name=%s"
+    cursor.execute(query, (state_name, ))
 
 
     # Fetch results and print them
@@ -41,5 +41,5 @@ if __name__ == "__main__":
   username = sys.argv[1]
   password = sys.argv[2]
   database = sys.argv[3]
-  search_name = sys.argv[4]
-  list_states(username, password, database, search_name)
+  state_name = sys.argv[4]
+  list_states(username, password, database, state_name)
