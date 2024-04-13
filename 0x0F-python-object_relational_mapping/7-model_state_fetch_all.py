@@ -5,30 +5,6 @@ from sqlalchemy import create_engine, Session
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 import sys
-def list_all_states(username, password, database):
-  """
-  Connects to a MySQL database, creates a session, and lists all State objects
-  from the 'states' table, sorted by id in ascending order.
-
-  Args:
-      username: Username for MySQL authentication.
-      password: Password for MySQL authentication.
-      database: Name of the database to connect to.
-  """
-  engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database))
-  # Create database engine connection URL
-
-  Base.metadata.create_all(engine)
-
-  # Create a session using the engine
-  SessionLocal = sessionmaker(bind=engine)
-  session = SessionLocal()
-
-  states = session.query(State).order_by(State.id)
-
-  # Print state information
-  for state in states:
-      print(state.id, state.name, sep=": ")
 
 
 if __name__ == "__main__":
@@ -40,5 +16,16 @@ if __name__ == "__main__":
   database = sys.argv[3]
   # Parse arguments
 
+  engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database))
   # Call list_all_states function
-  list_all_states(username, password, database)
+  Base.metadata.create_all(engine)
+
+  # Create a session using the engine
+  SessionLocal = sessionmaker(bind=engine)
+  session = SessionLocal()
+
+  states = session.query(State).order_by(State.id)
+
+  # Print state information
+  for state in states:
+      print(state.id, state.name, sep=": ")
