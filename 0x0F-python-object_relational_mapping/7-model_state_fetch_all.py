@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """ 1 filter states """
 
-from sqlalchemy import create_engine, Session
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 import sys
-
 
 if __name__ == "__main__":
   # Create argument parser
