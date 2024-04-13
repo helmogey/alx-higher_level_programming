@@ -1,20 +1,47 @@
 #!/usr/bin/python3
-""" prints the first State object from the database hbtn_0e_6_usa
-"""
-import sys
-from model_state import Base, State
-from sqlalchemy import (create_engine)
+""" 1 filter states """
+
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
+import sys
+
+
+def list_states(username, password, database):
+    """
+    Connects to a MySQL database and lists all states from the 'states' table,
+    sorting them by id in ascending order.
+
+    Args:
+        username: Username for MySQL authentication.
+        password: Password for MySQL authentication.
+        database: Name of the database to connect to.
+    """
+
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database))
+    # Call list_all_states function
+    Base.metadata.create_all(engine)
+
+    # Create a session using the engine
+    SessionLocal = sessionmaker(bind=engine)
+    session = SessionLocal()
+
+    state = session.query(State).first()
+
+    # Print state information if found
+    if state:
+        print(state.id, state.name, sep=": ")
+    else:
+        print("Nothing")
 
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    instance = session.query(State).first()
-    if instance is None:
-        print("Nothing")
-    else:
-        print(instance.id, instance.name, sep=": ")
+    # Create argument parser
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    # Parse arguments
+
+    list_states(username, password, database)
+
+
