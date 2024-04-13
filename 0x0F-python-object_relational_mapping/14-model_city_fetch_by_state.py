@@ -31,7 +31,8 @@ def fetch_cities_by_state(username, password, database):
 
         for city in cities:
             # Get the state name from the relationship
-            print(city[0] + ": (" + str(city[1]) + ") " + city[2])
+            state_name = city.state.name
+            print(f"{state_name}: ({city.id}) {city.name}")
     except:
         pass
 
