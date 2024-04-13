@@ -17,8 +17,8 @@ def list_all_states(username, password, database):
   """
   engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database))
   # Create database engine connection URL
-  
-  # Base.metadata.create_all(engine)
+
+  Base.metadata.create_all(engine)
 
   # Create a session using the engine
   SessionLocal = sessionmaker(bind=engine)
