@@ -4,8 +4,7 @@
 from sqlalchemy import create_engine, Session
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-import argparse
-
+import sys
 def list_all_states(username, password, database):
   """
   Connects to a MySQL database, creates a session, and lists all State objects
@@ -30,25 +29,22 @@ def list_all_states(username, password, database):
 
     # Print state information
     for state in states:
-      print(f"ID: {state.id} - Name: {state.name}")
+      print(state)
 
   except Exception as err:
-    print(f"Error retrieving data: {err}")
+    pass
   finally:
     # Close the session
     session.close()
 
 if __name__ == "__main__":
   # Create argument parser
-  parser = argparse.ArgumentParser(description="List all states from a MySQL database.")
 
-  # Define required arguments
-  parser.add_argument("-u", "--username", required=True, help="MySQL username")
-  parser.add_argument("-p", "--password", required=True, help="MySQL password")
-  parser.add_argument("-d", "--database", required=True, help="Database name")
 
+  username = sys.argv[1]
+  password = sys.argv[2]
+  database = sys.argv[3]
   # Parse arguments
-  args = parser.parse_args()
 
   # Call list_all_states function
-  list_all_states(args.username, args.password, args.database)
+  list_all_states(username, password, database)
