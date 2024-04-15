@@ -20,8 +20,7 @@ def list_states(username, password, database):
 
     try:
       # Connect to the MySQL server
-      connection = MySQLdb.connect(host="localhost", user=username,
-                                   passwd=password, db=database)
+      connection = MySQLdb.connect(host="localhost", user=username, passwd=password, db=database)
       cursor = connection.cursor()
 
       # Execute query to select all states ordered by id
