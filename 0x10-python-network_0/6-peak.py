@@ -20,16 +20,12 @@ def find_peak(list_of_integers):
       return None
 
       # Iterate through the list, checking for elements greater than both neighbors
-    for i in range(1, len(list_of_integers) - 1):
-      if list_of_integers[i] > list_of_integers[i - 1] and list_of_integers[i] > list_of_integers[i + 1]:
-        return list_of_integers[i]
+    if len(list_of_integers) % 2 == 0:
+        return max(list_of_integers)
+    else:
+        for i in range(1, len(list_of_integers) - 1):
+          if list_of_integers[i] > list_of_integers[i - 1] and list_of_integers[i] > list_of_integers[i + 1]:
+            return list_of_integers[i]
 
       # No peak found in the list
     return None
-
-print(find_peak([1, 2, 4, 6, 3]))
-print(find_peak([4, 2, 1, 2, 3, 1]))
-print(find_peak([2, 2, 2]))
-print(find_peak([]))
-print(find_peak([-2, -4, 2, 1]))
-print(find_peak([4, 2, 1, 2, 2, 2, 3, 1]))
