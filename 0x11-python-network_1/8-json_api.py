@@ -3,13 +3,8 @@
  http://0.0.0.0:5000/search_user with the letter as a parameter."""
 import requests
 import sys
-import json
 
-
-def main():
-    """Sends a POST request with a letter parameter
-    and displays user information."""
-
+if __name__ == "__main__":
     if len(sys.argv) == 1:
         q = ""
     else:
@@ -25,8 +20,3 @@ def main():
             print("[{}] {}".format(response.get("id"), response.get("name")))
     except ValueError:
         print("Not a valid JSON")
-
-
-if __name__ == "__main__":
-    main()
-
