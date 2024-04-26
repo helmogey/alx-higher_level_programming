@@ -12,12 +12,10 @@ def main():
     # Use a with statement to manage the connection and response
     with urllib.request.urlopen(url) as res:
         data = res.read()
-
-    # Split lines and add a tab before '-' characters
-    print("Body response:")
-    print("\t- type: {}".format(type(data)))
-    print("\t- content: {}".format(data))
-    print("\t- utf8 content: {}".format(data.decode('utf-8')))
+        print("Body response:")
+        print("\t- type: {}".format(type(data)))
+        print("\t- content: {}".format(data))
+        print("\t- utf8 content: {}".format(data.decode('utf-8')))
 
 if __name__ == "__main__":
     main()
