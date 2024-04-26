@@ -3,10 +3,10 @@
 to the passed URL with the email as a parameter,
 and displays the body of the response
 (decoded in utf-8)"""
-
 import urllib.request
 import urllib.parse
 import sys
+
 def main(url, email):
     """Sends a POST request to a URL with an email parameter
     and displays the response body."""
