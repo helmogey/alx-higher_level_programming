@@ -7,9 +7,9 @@ and displays the body of the response
 import urllib.request
 import urllib.parse
 import sys
-
 def main(url, email):
-    """Sends a POST request to a URL with an email parameter and displays the response body."""
+    """Sends a POST request to a URL with an email parameter
+    and displays the response body."""
 
     data = {"email": email}
     data_encoded = urllib.parse.urlencode(data).encode("utf-8")
