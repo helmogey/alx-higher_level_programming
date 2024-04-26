@@ -3,13 +3,14 @@
 the URL and displays the value of the X-Request-Id
  variable found in the header of the response """
 
-
-import sys
 import urllib.request
-
-if __name__ == "__main__":
-    url = sys.argv[1]
-
+import sys
+def main(url):
+    """Fetches a URL, extracts the X-Request-Id header value, and displays it."""
+    
     request = urllib.request.Request(url)
     with urllib.request.urlopen(request) as response:
         print(dict(response.headers).get("X-Request-Id"))
+
+if __name__ == "__main__":
+    main(sys.argv[1])
