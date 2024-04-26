@@ -14,10 +14,10 @@ def main():
         data = response.read().decode("utf-8")
 
     # Split lines and add a tab before '-' characters
-    formatted_data = ["\t" + line.strip() for line in data.splitlines() if line.startswith("-")]
-
-    # Print the formatted response body
-    print("\n".join(formatted_data))
+    print("Body response:")
+    print("\t- type: {}".format(type(data)))
+    print("\t- content: {}".format(data))
+    print("\t- utf8 content: {}".format(data.decode('utf-8')))
 
 if __name__ == "__main__":
     main()
