@@ -7,6 +7,7 @@ import urllib.request
 import urllib.parse
 import sys
 
+
 def main(url, email):
     """Sends a POST request to a URL with an email parameter
     and displays the response body."""

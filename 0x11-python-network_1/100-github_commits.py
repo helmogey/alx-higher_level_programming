@@ -5,6 +5,7 @@ solve this challenge.
 import sys
 import requests
 
+
 def main(url):
     response = requests.get(url)
     commits = response.json()

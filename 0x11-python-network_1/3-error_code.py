@@ -5,6 +5,7 @@ import urllib.request
 import urllib.error
 import sys
 
+
 def main(url):
     """Fetches a URL, handles potential errors, and displays the
     response body (decoded in UTF-8)."""

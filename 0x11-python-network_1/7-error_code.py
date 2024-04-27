@@ -4,6 +4,7 @@ and displays the body of the response."""
 import requests
 import sys
 
+
 def main(url):
     """Fetches a URL, checks the status code,
      and displays the response body (or error message)."""

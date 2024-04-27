@@ -5,6 +5,7 @@ and finally displays the body of the response."""
 import requests
 import sys
 
+
 def main(url, email):
     """Sends a POST request to a URL with an email
      parameter and displays the response body."""

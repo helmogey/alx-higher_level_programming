@@ -2,6 +2,7 @@
 """  script that fetches https://alx-intranet.hbtn.io/status. """
 import urllib.request
 
+
 def main():
     """Fetches the status of https://alx-intranet.hbtn.io/status
     and displays the response body."""
